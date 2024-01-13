@@ -9,7 +9,7 @@
 # Висновки:
 Результат прогону функцій сортування відображено у таблиці нижче:
 
-Sort method          | Small dataset        | Medium dataset:<20   | Large dataset
+Sort method          | Small dataset        | Medium dataset       | Large dataset
 ---------------------|----------------------|----------------------|------------------
 Insertion sort       | 0.36543              | 31.58156             | 4126.19579
 Merge sort           | 0.02006              | 0.29567              | 4.02194
