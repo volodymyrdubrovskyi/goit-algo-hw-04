@@ -44,6 +44,7 @@ def merge(left, right):
 if __name__ == '__main__':
     data_small = [random.randint(0,10000) for _ in range(1000)]
     data_medium = [random.randint(0,10000) for _ in range(10000)]
+    data_large = [random.randint(0,100000) for _ in range(100000)]
 
     time1_insertion = timeit.timeit(lambda: insertion_sort(data_small[:]), number=10)
     time1_merge = timeit.timeit(lambda: merge_sort(data_small[:]), number=10)
@@ -53,8 +54,12 @@ if __name__ == '__main__':
     time2_merge = timeit.timeit(lambda: merge_sort(data_medium[:]), number=10)
     time2_timsort = timeit.timeit(lambda: data_medium[:].sort(), number=10)
 
-    print(f"{'Sort method':<20} | {'Small dataset':<20} | {'Medium dataset'}")
+    time3_insertion = timeit.timeit(lambda: insertion_sort(data_large[:]), number=10)
+    time3_merge = timeit.timeit(lambda: merge_sort(data_large[:]), number=10)
+    time3_timsort = timeit.timeit(lambda: data_large[:].sort(), number=10)
+
+    print(f"{'Sort method':<20} | {'Small dataset':<20} | {'Medium dataset'}:<20 | {'Large dataset'}")
     print(f"{'-'*63}")
-    print(f"{'Insertion sort': <20} | {time1_insertion:<20.5f} | {time2_insertion:<20.5f}")
-    print(f"{'Merge sort': <20} | {time1_merge:<20.5f} | {time2_merge:<20.5f}")
-    print(f"{'Timsort': <20} | {time1_timsort:<20.5f} | {time2_timsort:<20.5f}")
+    print(f"{'Insertion sort': <20} | {time1_insertion:<20.5f} | {time2_insertion:<20.5f} | {time3_insertion:<20.5f}")
+    print(f"{'Merge sort': <20} | {time1_merge:<20.5f} | {time2_merge:<20.5f} | {time3_merge:<20.5f}")
+    print(f"{'Timsort': <20} | {time1_timsort:<20.5f} | {time2_timsort:<20.5f} | {time3_timsort:<20.5f}")
